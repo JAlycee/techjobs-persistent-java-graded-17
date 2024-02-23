@@ -10,8 +10,9 @@ import java.util.List;
 
 @Entity
 public class Skill extends AbstractEntity {
-    @NotBlank
-    @Size(max = 150)
+
+    @NotBlank(message = "Please add a description")
+    @Size(max = 255, message = "Please keep your description under 255 Characters.")
     private String description;
 
     @ManyToMany(mappedBy = "skills")
@@ -21,16 +22,18 @@ public class Skill extends AbstractEntity {
         this.description = description;
     }
 
-    public Skill() {}
-
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
+    public Skill() {
     }
 
     public List<Job> getJobs() {
         return jobs;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

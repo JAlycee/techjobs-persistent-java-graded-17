@@ -16,6 +16,7 @@ public class TestCommentedTests extends AbstractTest {
         assertEquals(36, numTests);
     }
 
+
     @Test
     public void testTaskFourTestNumber () throws ClassNotFoundException {
         Class testTaskTwoClass = getClassByName("TestTaskFour");
